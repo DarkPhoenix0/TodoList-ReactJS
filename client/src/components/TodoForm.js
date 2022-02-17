@@ -24,6 +24,13 @@ function TodoForm(props) {
             <form action="" >
                 <input type="search" name="" id="" placeholder='write todo here ! ' />
                 <button className='add_todo_btn'>Add</button>
+
+                <select name="" id="" >
+                    <option value="" selected disabled>--select user--</option>
+                    <option value="">Kira</option>
+                    <option value="">Lazar</option>
+                </select>
+
             </form>
             <TodoDisplay data={data} loading={loading} error={error}/>
         </div>

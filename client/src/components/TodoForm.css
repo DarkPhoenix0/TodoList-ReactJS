@@ -6,13 +6,21 @@
     align-items: center;
 }
 .add_todo_form form{
-    width: 400px;
+    width: 600px;
     height: 40px;
     display: flex;
 }
+select{
+    outline: none;
+    border: none;
+    margin-left: 10px;
+    padding: 0 10px;
+
+}
+
 
 .add_todo_form form input{
-    width: 400px;
+    width: 500px;
     height: 100%;
     padding-left: 5px;
     outline: none;
