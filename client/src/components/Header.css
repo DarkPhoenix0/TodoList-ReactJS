@@ -7,6 +7,12 @@
     color: #fff;
 }
 
+.logo{
+    color: var(--second-color);
+    height: 40px;
+    width: 100%;
+}
+
 .header button{
 
     padding: .5em 1rem;

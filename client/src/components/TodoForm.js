@@ -1,11 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 import TodoDisplay from "./TodoDisplay";
 import './TodoForm.css'
 //const todos = require('../db/data')
 
-import {useQuery, useMutation, gql} from '@apollo/client'
+import {gql, useQuery} from '@apollo/client'
 
-const getData = require('../queries/queries')
+const getData = gql`
+    {
+        getTodos {
+            id
+            content
+            createdAt
+        }
+    }
+`
 
 function TodoForm(props) {
 

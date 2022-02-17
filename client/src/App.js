@@ -8,6 +8,7 @@ import {
     ApolloProvider,
 
 } from '@apollo/client'
+import Footer from "./components/Footer";
 
 const client = new ApolloClient({
     uri:'http://localhost:4000/',
@@ -21,6 +22,7 @@ function App() {
         <ApolloProvider client={client}>
             <TodoForm/>
         </ApolloProvider>
+        <Footer/>
     </div>
   );
 }

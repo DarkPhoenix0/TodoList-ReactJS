@@ -5,6 +5,7 @@ const getData = gql`
         getTodos {
             id
             content
+            createdAt
         }
     }
 `

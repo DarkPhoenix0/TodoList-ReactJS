@@ -1,6 +1,9 @@
 import React from 'react';
 import './TodoDisplay.css'
-const todos = require('../db/data')
+
+import DeleteIcon from '@mui/icons-material/Delete';
+import UpdateIcon from '@mui/icons-material/Update';
+import IconButton from '@mui/material/IconButton';
 
 function TodoDisplay({data, error, loading}) {
 
@@ -10,8 +13,22 @@ function TodoDisplay({data, error, loading}) {
     const todo = data.getTodos.map(todo =>{
             return (
                 <div key={todo.id} className='todo'>
-                    <input type="checkbox" name="" id="cc"/>
-                    <label aria-label="cc">{todo.content}</label>
+                    <div className="todo_right_side">
+                        <div>
+                            <input type="checkbox" name="" id="cc"/>
+                            <label aria-label="cc">{todo.content}</label>
+                        </div>
+                        <p>Ajouté le : {todo.createdAt}</p>
+                    </div>
+
+                    <div>
+                        <IconButton aria-label="delete">
+                            <UpdateIcon/>
+                        </IconButton>
+                        <IconButton aria-label="delete">
+                            <DeleteIcon />
+                        </IconButton>
+                    </div>
                 </div>
             )
         }
