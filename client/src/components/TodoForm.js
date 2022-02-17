@@ -1,34 +1,23 @@
 import React, {useState} from 'react';
 import TodoDisplay from "./TodoDisplay";
 import './TodoForm.css'
-const todos = require('../db/data')
+//const todos = require('../db/data')
+
+import {useQuery, useMutation, gql} from '@apollo/client'
+
+const getData = require('../queries/queries')
 
 function TodoForm(props) {
 
-    const [todo, setTodos] = useState([todos])
-
-    const getTodo = (e) =>{
-        const newTodo = e.target.value
-        return newTodo
-    }
-    const sendTodo = (e) =>{
-        e.preventDefault()
-        const newTodo = {id: 4, title: 'try', content: 'bonjour'}
-        setTodos(preventState =>{
-            return {...preventState, ...newTodo}
-        }
-    )
-
-    }
-        console.log(todo)
+    const {loading, error, data} = useQuery(getData)
 
     return (
         <div className='add_todo_form'>
-            <form action="" onSubmit={sendTodo}>
-                <input type="search" name="" id="" placeholder='write todo here ! ' onChange={getTodo}/>
+            <form action="" >
+                <input type="search" name="" id="" placeholder='write todo here ! ' />
                 <button className='add_todo_btn'>Add</button>
             </form>
-            <TodoDisplay/>
+            <TodoDisplay data={data} loading={loading} error={error}/>
         </div>
     );
 }
